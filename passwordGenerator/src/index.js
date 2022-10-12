@@ -1,3 +1,6 @@
+const paragraphPassword = document.querySelector("#password");
+const form = document.querySelector("#form")
+
 const letters = [
   "a",
   "b",
@@ -34,10 +37,25 @@ const arrayOfArrays = [letters, numbers, symbols];
 
 let passwordLength = 10;
 
-for (let i = 0; i < passwordLength; i++) {
-  const myArr = arrayOfArrays;
+function generatePassword() {
+  let strongPassword = [];
+  for (let i = 0; i < passwordLength; i++) {
+    const myArr = arrayOfArrays[getRandomNumber(0, arrayOfArrays.length - 1)];
+    const randomCharacter = myArr[getRandomNumber(0, myArr.length - 1)]
+
+    strongPassword.push(randomCharacter);
+  }
+
+  strongPassword = strongPassword.join("")
+  console.log(strongPassword);
+  paragraphPassword.innerText = `${paragraphPassword.textContent}  ${strongPassword}`
 }
 
-const getRandomNumber = (min, max) => {
-
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1));
 }
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
+  console.log("Se esta generando la contraseña");
+})

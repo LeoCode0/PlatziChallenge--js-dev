@@ -11,8 +11,12 @@
 
 <body>
 
-  <form action="" class="form">
+  <form action="" class="form" id="form">
     <p id="password" class="password">Aqui aparecera tu contraseña</p>
+    <div class="option">
+      <input type="range" name="lenght" min="10" max="100">
+      <p>Logitud de la contraseña</p>
+    </div>
     <div class="option">
       <input type="checkbox" name="" id="">
       <p>Incluir letras</p>
@@ -29,8 +33,13 @@
       <input type="checkbox" name="" id="">
       <p>Incluir palabras</p>
     </div>
+    <div class="option">
+      <button type="submit" id="generate-button">Generar contraseña</button>
+    </div>
     </p>
   </form>
+
+  <script src="./src/index.js"></script>
 </body>
 
 </html>
