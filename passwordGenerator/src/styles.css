@@ -3,6 +3,8 @@
   --text-color: white;
   --border-color: #40587c;
   --button-text-color: rgb(131, 217, 136);
+  --platzi-color: rgb(152, 202, 63);
+  --platzi-color-hover: rgb(152, 202, 63, 80%);
 }
 
 *{
@@ -23,10 +25,45 @@ body{
   width: 100vw;
 }
 
+.head{
+  border: 1px solid var(--platzi-color);
+  padding: 20px;
+  border-radius: 15px 15px 0px 0px;
+  width: 80%;
+  max-width: 700px;
+}
+
+.password{
+  color: var(--button-text-color);
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px;
+  Word-wrap: break-Word;
+  font: bold 80% monospace;
+}
+
+.copiador {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--text-color);
+  padding: 9px 11px;
+  border-radius: 8px;
+  font-size: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.copiador:hover {
+  color: var(--text-color);
+  background-color: var(--platzi-color);
+  border: 1px solid var(--text-color);
+}
+
+
 .form{
   border: 1px solid var(--border-color);
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 0px 0px 15px 15px;
   width: 80%;
   max-width: 700px;
 }
@@ -54,4 +91,19 @@ body{
 
 .option input{
   margin: 10px;
+}
+
+.btn-generar{
+  color: var(--bg-color);
+  background-color: var(--platzi-color);
+  border: 1px solid var(--text-color);
+  padding: 9px 11px;
+  border-radius: 8px;
+  font-size: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-generar:hover{
+  background-color: var(--platzi-color-hover);
 }

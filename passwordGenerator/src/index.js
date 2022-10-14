@@ -1,6 +1,7 @@
 const paragraphPassword = document.querySelector("#password");
 const form = document.querySelector("#form");
 const elInput = document.querySelector('#num_input');
+const boton = document.querySelector('#copiador')
 
 const letters = [
   "a",
@@ -46,6 +47,22 @@ if(elInput){
   }
 }
 
+boton.addEventListener("click", copiarAlPortapapeles, false);
+
+function copiarAlPortapapeles() {
+  var enlace = document.getElementById("password");
+  var inputFalso = document.createElement("input");
+  inputFalso.setAttribute("value", enlace.innerHTML);
+
+  document.body.appendChild(inputFalso);
+
+  inputFalso.select();
+
+  document.execCommand("copy");
+
+  document.body.removeChild(inputFalso);
+  alert("Copiado al portapales!");
+}
 
 function generatePassword(passwordLength, botonsitos) {
   const arrayOfArrays = [];
@@ -73,7 +90,7 @@ function generatePassword(passwordLength, botonsitos) {
   }
 
   strongPassword = strongPassword.join("");
-  paragraphPassword.innerText = `${strongPassword}`;
+  paragraphPassword.innerText = strongPassword;
 }
 
 function getRandomNumber(min, max) {

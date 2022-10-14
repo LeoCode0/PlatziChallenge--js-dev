@@ -7,37 +7,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Password generator</title>
   <link rel="stylesheet" href="./src/styles.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 
 <body>
-  <form class="form" id="form">
-    <p id="password" class="password">Aquí aparecerá tu contraseña</p>
-    <div class="option-range">
-      <div id="etiqueta"></div>
-      <input type="range" name="length" value="0" id="num_input" min="10" max="100">
-      <p>Define el total de caracteres de tu contraseña</p>
+  <div class="">
+    <div class="head">
+      <p>Nueva contraseña:</p> <span id="password" class="password">abcd1234</span>
+      <button class="copiador" id="copiador"><i class="uil uil-copy"></i></button>
     </div>
-    <div class="option">
-      <input type="checkbox" name="letters" id="">
-      <p>Incluir letras</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="numbers" id="">
-      <p>Incluir numeros</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="symbols" id="">
-      <p>Incluir simbolos</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="words" id="">
-      <p>Incluir palabras</p>
-    </div>
-    <div class="option">
-      <button type="submit" id="generate-button">Genera tu fuerte contraseña</button>
-    </div>
-  </form>
-
+      
+    <form class="form" id="form">
+      <div class="option-range">
+        <div id="etiqueta"></div>
+        <input type="range" name="length" value="0" id="num_input" min="10" max="100">
+        <p>Define el total de caracteres de tu contraseña</p>
+      </div>
+      <div class="option">
+        <input type="checkbox" name="letters" id="">
+        <p>Incluir letras</p>
+      </div>
+      <div class="option">
+        <input type="checkbox" name="numbers" id="">
+        <p>Incluir numeros</p>
+      </div>
+      <div class="option">
+        <input type="checkbox" name="symbols" id="">
+        <p>Incluir simbolos</p>
+      </div>
+      <div class="option">
+        <input type="checkbox" name="words" id="">
+        <p>Incluir palabras</p>
+      </div>
+      <div class="option">
+        <button type="submit" id="generate-button" class="btn-generar">Genera tu fuerte contraseña</button>
+      </div>
+    </form>
+  </div>
   <script src="./src/index.js"></script>
 </body>
 
