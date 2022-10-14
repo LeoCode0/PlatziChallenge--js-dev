@@ -1,5 +1,10 @@
 const paragraphPassword = document.querySelector("#password");
 const form = document.querySelector("#form");
+const buttonCopy = document.querySelector("#button-copy");
+const inputLength = document.querySelector("#input-length");
+const passwordLengthParagraph = document.querySelector("#password-length");
+
+const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5";
 
 const letters = [
   "a",
@@ -32,9 +37,10 @@ const letters = [
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const symbols = ["'", ":", "!", "@", "#", "$", "^", ")", "&", "*", "%", "-"];
+let words = [];
 
 function generatePassword(passwordLength, botonsitos) {
-  const arrayOfArrays = [];
+  let arrayOfArrays = [];
 
   if (botonsitos.letters) {
     arrayOfArrays.push(letters);
@@ -48,22 +54,52 @@ function generatePassword(passwordLength, botonsitos) {
     arrayOfArrays.push(symbols);
   }
 
-  console.log(arrayOfArrays);
+  if (botonsitos.words) {
+    arrayOfArrays = [];
+    arrayOfArrays.push(words);
+  }
 
   let strongPassword = [];
   for (let i = 0; i < passwordLength; i++) {
     const myArr = arrayOfArrays[getRandomNumber(0, arrayOfArrays.length - 1)];
+
     const randomCharacter = myArr[getRandomNumber(0, myArr.length - 1)];
 
     strongPassword.push(randomCharacter);
   }
 
-  strongPassword = strongPassword.join("");
-  paragraphPassword.innerText = `Aquí aparecerá tu contraseña ${strongPassword}`;
+  if (botonsitos.words) {
+    strongPassword = strongPassword.join("-");
+  } else {
+    strongPassword = strongPassword.join("");
+  }
+  paragraphPassword.value = strongPassword;
 }
+
+function fetchData(API) {
+  fetch(API)
+    .then((response) => response.json())
+    .then((data) => {
+      words = data.quotes.map((quote) => quote.text);
+      words = words.join("").split(" ").sort();
+    });
+}
+
+fetchData(API);
 
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1));
+}
+
+function copyToClipboard(target) {
+  const element = document.querySelector(target);
+  const value = element.value;
+  if (value.length === 0) {
+    alert("Tienes que generar una contraseña");
+  } else {
+    window.navigator.clipboard.writeText(value);
+    alert("Copiaste la contraseña");
+  }
 }
 
 form.addEventListener("submit", (event) => {
@@ -77,5 +113,18 @@ form.addEventListener("submit", (event) => {
     symbols: formElement.symbols.checked,
   };
 
+  if (checks.words) {
+    formElement.letters.checked = false;
+  }
+
   generatePassword(passwordLength, checks);
+  buttonCopy.disabled = false;
+});
+
+buttonCopy.addEventListener("click", () => {
+  copyToClipboard("#password");
+});
+
+inputLength.addEventListener("input", (e) => {
+  passwordLengthParagraph.innerText = e.target.value;
 });

@@ -11,9 +11,12 @@
 
 <body>
   <form class="form" id="form">
-    <p id="password" class="password">Aquí aparecerá tu contraseña</p>
+    <p class="password">Aquí aparecerá tu contraseña</p>
+    <input type="text" disabled id="password">
+    <button type="button" disabled id="button-copy">Copiar contraseña</button>
     <div class="option">
-      <input type="range" name="length" id="" min="10" max="100">
+      <p id="password-length">55</p>
+      <input type="range" name="length" id="input-length" min="10" max="100">
       <p>Define el total de caracteres de tu contraseña</p>
     </div>
     <div class="option">
