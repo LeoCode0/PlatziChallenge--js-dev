@@ -47,6 +47,11 @@ Tecnologías
 
 Issues:
 
+- [Mejora el algoritmo de creación de contraseñas](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/3) 💻
+- [¡Las clases son un desastre! Implementa BEM para solucionar esto](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/4) 🎨
+- [Mejora la UI](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/5) ✨
+- [Implementa librerías](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/6) 🌐
+
 ## Calculator
 
 🚧WIP🚧
