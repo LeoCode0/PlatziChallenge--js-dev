@@ -6,7 +6,7 @@ Aquí abajo tienes la lista de proyectos que se actualizarán constantemente
 
 ## Password generator
 
-Crea un generador de contraseñas que cumpla con las siguientes características:
+Generador de contraseñas las siguientes características:
 
 - Poder copiar la contraseña
 - Definir el total de caracteres que pueda llegar a tener nuestra contraseña
@@ -25,9 +25,27 @@ Tecnologías
 
 Issues:
 
-## Tic tac toe
+## Tic tac toe / tres en raya / el gato / ta te ti 🎮
 
-🚧WIP🚧
+¿Recuerdas ese famoso juego donde tenías que poner circulitos (o) y equis (x)? El objetivo era básicamente obtener 3 símbolos iguales en línea ya sea vertical, horizontal o diagonal. Pues vamos a recrearlo desde 0 en web usando HTML, CSS y **JavaScript**.
+
+Especificamente contará con las siguientes características 👇
+
+- Poder escoger el símbolo que queremos usar (o) - (x)
+- Dibujar en el DOM el símbolo deseado
+- Poder declarar al ganador
+- Tener multijugador local
+- Tener un algoritmo que juegue contra nosotros
+- Tener historial de victorias / derrotas
+- Tener contador de victorias
+
+Tecnologías
+
+- HTML
+- CSS
+- JS
+
+Issues:
 
 ## Calculator
 
