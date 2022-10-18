@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Password generator by Platzi community">
+  <title>Password generator</title>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+
+<body>
+  <form class="form" id="form">
+    <p class="password">Aquí aparecerá tu contraseña</p>
+    <input type="text" disabled id="password">
+    <button type="button" disabled id="button-copy">Copiar contraseña</button>
+    <div class="option">
+      <p id="password-length">55</p>
+      <input type="range" name="length" id="input-length" min="10" max="100">
+      <p>Define el total de caracteres de tu contraseña</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" name="letters" id="">
+      <p>Incluir letras</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" name="numbers" id="">
+      <p>Incluir numeros</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" name="symbols" id="">
+      <p>Incluir simbolos</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" name="words" id="">
+      <p>Incluir palabras</p>
+    </div>
+    <div class="option">
+      <button type="submit" id="generate-button">Genera tu fuerte contraseña</button>
+    </div>
+  </form>
+
+  <script src="./src/index.js"></script>
+</body>
+
+</html>
