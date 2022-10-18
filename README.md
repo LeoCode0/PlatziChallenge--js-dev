@@ -25,6 +25,11 @@ Tecnologías
 
 Issues:
 
+- [Mejora el algoritmo de creación de contraseñas](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/3) 💻
+- [¡Las clases son un desastre! Implementa BEM para solucionar esto](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/4) 🎨
+- [Mejora la UI](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/5) ✨
+- [Implementa librerías](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/6) 🌐
+
 ## Tic tac toe / tres en raya / el gato / ta te ti 🎮
 
 ¿Recuerdas ese famoso juego donde tenías que poner circulitos (o) y equis (x)? El objetivo era básicamente obtener 3 símbolos iguales en línea ya sea vertical, horizontal o diagonal. Pues vamos a recrearlo desde 0 en web usando HTML, CSS y **JavaScript**.
@@ -46,11 +51,6 @@ Tecnologías
 - JS
 
 Issues:
-
-- [Mejora el algoritmo de creación de contraseñas](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/3) 💻
-- [¡Las clases son un desastre! Implementa BEM para solucionar esto](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/4) 🎨
-- [Mejora la UI](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/5) ✨
-- [Implementa librerías](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/6) 🌐
 
 ## Calculator
 
