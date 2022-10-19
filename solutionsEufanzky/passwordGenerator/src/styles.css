@@ -1,8 +1,9 @@
-:root{
-  --bg-color: #121f3d;
-  --text-color: white;
-  --border-color: #40587c;
-  --button-text-color: rgb(131, 217, 136);
+:root {
+  --paradise-pink: #EF476F;
+  --orange-yello-crayola: #FFD166;
+  --caribbean-green: #06D6A0;
+  --blue-NCS: rgb(17, 138, 178);
+  --midnight-gree-eagle-green: #073B4C;
 }
 
 *{
@@ -16,56 +17,120 @@ html {
 }
 
 body{
-  background-color: var(--bg-color);
+  background: linear-gradient(to bottom right, var(--paradise-pink), var(--orange-yello-crayola));
   color: var(--text-color);
   font-family: sans-serif;
   font-size: 2.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 100vh;
   width: 100vw;
 }
 
-
+/*main title*/
 .title {
-  margin-bottom: 10px;
+  margin-bottom: 40px 0px;
+  text-align: center;
+  font-size: 4rem;
+  color: var(--midnight-gree-eagle-green);
 }
 
+
+/*-----------------FORM------------------------*/
 .form{
-  border: 1px solid var(--border-color);
+  background: rgba(17, 138, 178, 0.1);
+  border: 1px solid var(--midnight-gree-eagle-green);
   padding: 20px;
   border-radius: 15px;
   width: 80%;
   max-width: 700px;
 }
 
-.option{
-  display: flex;
-  margin: 10px 0;
+/*first part: password and copy button*/
+.password {
+  font-size: 2.5rem;
+  color: var(--midnight-gree-eagle-green);
+}
+.copy-button:hover {
+  color: var(--caribbean-green);
 }
 
+/*second part: irange input*/
+.define-your-password-text {
+  font-size: 2.5rem;
+  color: var(--midnight-gree-eagle-green);
+}
+.range-input {
+  width: 400px;
+  height: 15px;
+  appearance: none;
+  outline: none;
+  margin-left: 20px;
+  background-color: var(--caribbean-green);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: -1px 1px 1px black;
+}
+.range-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: var(--paradise-pink);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid var(--midnight-gree-eagle-green);
+}
+
+
+/*third part: check inputs*/
+.option{
+  display: flex;
+  align-items: center;
+
+  margin: 10px 0;
+}
+.option p {
+  font-size: 2.5rem;
+  color: var(--midnight-gree-eagle-green);
+}
 .option input{
   margin-right: 10px;
 }
+.checkbox-input {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--midnight-gree-eagle-green);
+}
+.checkbox-input:hover {
+  cursor: pointer;
+}
+.checkbox-input:checked {
+  background-color: var(--caribbean-green);
+}
 
+
+/*---------------id styles--------------------------*/
 #password:disabled{
   cursor: not-allowed;
   border: 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--caribbean-green);
   background: transparent;
   padding: 10px 0;
   font-weight: 900;
   font-size: 2.6rem;
   width: 100%;
-  color: var(--text-color);
+  color: var(--caribbean-green);
 }
 
 #button-copy{
   border: 1px solid var(--border-color);
+
+  color: var(--caribbean-green);
   background: transparent;
-  color: var(--text-color);
+
   font-size: 2.0rem;
   padding: 10px 5px;
   border-radius: 10px;
@@ -75,10 +140,26 @@ body{
 
 #button-copy:hover{
   cursor: pointer;
-  opacity: 0.6;
+  color: var(--blue-NCS);
 
 }
 
 #button-copy:disabled{
   cursor: not-allowed;
+}
+/*-----------------------------------------*/
+
+.option button {
+  background-color: var(--caribbean-green);
+  border: none;
+  
+  width: 300px;
+  height: 50px;
+
+  box-shadow: -1px 1px 2px black;
+}
+.option button:hover {
+  background-color: var(--midnight-gree-eagle-green);
+  color: var(--orange-yello-crayola);
+  cursor: pointer;
 }
