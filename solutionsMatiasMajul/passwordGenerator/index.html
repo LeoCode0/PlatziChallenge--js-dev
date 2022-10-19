@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Password generator by Platzi community">
+  <title>Password generator</title>
+  <link rel="stylesheet" href="./src/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <form class="form" id="form">
+    <p class="form-title">Genera una contraseña segura</p>
+    <div class="output">
+      <div class="output-password">
+        <input type="output-text" disabled id="password">
+      </div>
+      <button class="output-copy" type="button" id="button-copy"><img src="./icons/copy.png"/></button>
+      <button class="output-generate" type="submit" id="generate-button"><img src="./icons/reload.png"/></button>
+
+    </div>
+    <div class="container">
+      <div class="length">
+        <p class="length-title">Longitud de la contraseña:</p>
+        <p class="length-value" id="password-length">12</p>
+        <input  class="length-range" type="range" name="length" id="input-length" min="10" max="100" value="12">
+      </div>
+      <div class="container-options">
+      <p class="length-title">Variantes usadas:</p>
+      <div class="options">
+        
+        <div class="option">
+          <input type="checkbox" name="letters" id="" class="option-check" checked>
+          <label class="option-title">Letras</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" name="numbers" id="" class="option-check" checked>
+          <label class="option-title">Números</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" name="symbols" id="" class="option-check" checked>
+          <label class="option-title">Símbolos</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" name="words" id="words-check" class="option-check">
+          <label class="option-title">Palabras</label>
+        </div>
+      </div>
+      </div>
+
+  </form>
+  
+  <script src="./src/index.js"></script>
+</body>
+
+</html>
