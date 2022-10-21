@@ -78,3 +78,22 @@ h1{
 
 }
 
+#modal{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 50%;
+  height: 40vh;
+  margin: 0 auto;
+  font-size: 30px;
+  color: white;
+  font-weight: 900;
+  background-color: #40587c;
+  border-radius: 15px;
+}
+
+
+#modal.invisible{
+  display: none;
+}
