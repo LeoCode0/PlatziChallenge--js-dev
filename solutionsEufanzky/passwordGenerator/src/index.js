@@ -34,7 +34,6 @@ const letters = [
   "y",
   "z",
 ];
-
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const symbols = ["'", ":", "!", "@", "#", "$", "^", ")", "&", "*", "%", "-"];
 let words = [];
@@ -76,6 +75,7 @@ function generatePassword(passwordLength, botonsitos) {
   paragraphPassword.value = strongPassword;
 }
 
+//api
 function fetchData(API) {
   fetch(API)
     .then((response) => response.json())
@@ -84,8 +84,8 @@ function fetchData(API) {
       words = words.join("").split(" ").sort();
     });
 }
-
 fetchData(API);
+
 
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1));
@@ -128,3 +128,24 @@ buttonCopy.addEventListener("click", () => {
 inputLength.addEventListener("input", (e) => {
   passwordLengthParagraph.innerText = e.target.value;
 });
+
+
+
+/*background animations*/
+// let body = document.querySelector('body');
+// let b1 = 111
+// let b2 = 102
+
+
+// let iteratorForAnimation = 0;
+// const timeAnimation = setInterval(()=>{
+//   console.log("hola");
+//   b1++;
+//   b2++;
+//   let firstBackgroundColor = `rgb(239, 71, ${b1})`;
+//   let secondBackgroundColor = `rgb(255, 209, ${b2})`;
+//   body.style.background = `
+//     background: linear-gradient(to bottom right, ${firstBackgroundColor}, ${secondBackgroundColor});
+//     `;
+// },50);
+// timeAnimation();

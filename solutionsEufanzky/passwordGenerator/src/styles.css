@@ -1,6 +1,6 @@
 :root {
-  --paradise-pink: #EF476F;
-  --orange-yello-crayola: #FFD166;
+  --paradise-pink: rgb(239, 71, 111);
+  --orange-yello-crayola: rgb(255, 209, 102);
   --caribbean-green: #06D6A0;
   --blue-NCS: rgb(17, 138, 178);
   --midnight-gree-eagle-green: #073B4C;
@@ -17,7 +17,8 @@ html {
 }
 
 body{
-  background: linear-gradient(to bottom right, var(--paradise-pink), var(--orange-yello-crayola));
+  background-image: linear-gradient(to bottom right, var(--paradise-pink), var(--orange-yello-crayola));
+  background-size: 500%;
   color: var(--text-color);
   font-family: sans-serif;
   font-size: 2.6rem;
@@ -27,6 +28,17 @@ body{
   justify-content: space-evenly;
   height: 100vh;
   width: 100vw;
+  position: relative;
+
+  animation-name: animate-background;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+}
+main {
+  position: absolute;
+  top: -400px;
+  width: 100%;
+  height: 100%;
 }
 
 /*main title*/
@@ -89,7 +101,7 @@ body{
   display: flex;
   align-items: center;
 
-  margin: 10px 0;
+  margin: 20px 0;
 }
 .option p {
   font-size: 2.5rem;
@@ -149,7 +161,13 @@ body{
 }
 /*-----------------------------------------*/
 
-.option button {
+.button-div {
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.button-div button {
   background-color: var(--caribbean-green);
   border: none;
   
@@ -157,9 +175,25 @@ body{
   height: 50px;
 
   box-shadow: -1px 1px 2px black;
+  transition: 0.2s;
 }
-.option button:hover {
+.button-div button:hover {
   background-color: var(--midnight-gree-eagle-green);
   color: var(--orange-yello-crayola);
   cursor: pointer;
+}
+
+
+
+/*ANIMATIONS*/
+@keyframes animate-background {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
