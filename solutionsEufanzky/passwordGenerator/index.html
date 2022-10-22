@@ -22,27 +22,29 @@
       <input class="range-input" type="range" name="length" id="input-length" min="10" max="20">
     </div>
     <p class="option">
-      <input class="checkbox-input" type="checkbox" name="letters" id="">
-      <label>Incluir letras</label>
+      <input class="checkbox-input" type="checkbox" name="letters" id="letters">
+      <label for="letters">Incluir letras</label>
     </p>
     <p class="option">
-      <input class="checkbox-input" type="checkbox" name="numbers" id="">
-      <label>Incluir numeros</label>
+      <input class="checkbox-input" type="checkbox" name="numbers" id="numbers">
+      <label for="numbers"">Incluir numeros</label>
     </p>
     <p class="option">
-      <input class="checkbox-input" type="checkbox" name="symbols" id="">
-      <label>Incluir simbolos</label>
+      <input class="checkbox-input" type="checkbox" name="symbols" id="symbols">
+      <label for="symbols">Incluir simbolos</label>
     </p>
     <p class="option">
-      <input class="checkbox-input" type="checkbox" name="words" id="">
-      <label>Incluir palabras</label>
+      <input class="checkbox-input" type="checkbox" name="words" id="words">
+      <label for="words">Incluir palabras</label>
     </p>
     <div class="button-div">
       <button type="submit" id="generate-button">Genera tu fuerte contraseña</button>
     </div>
   </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./src/index.js"></script>
-  
 </body>
 
 </html>
+
