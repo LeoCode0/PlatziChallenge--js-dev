@@ -4,7 +4,12 @@ const buttonCopy = document.querySelector("#button-copy");
 const inputLength = document.querySelector("#input-length");
 const passwordLengthParagraph = document.querySelector("#password-length");
 
-const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5";
+
+// const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5";
+const  api = axios.create({
+  baseURL: 'https://random-word-api.herokuapp.com/all',
+});
+
 
 const letters = [
   "a",
@@ -75,16 +80,20 @@ function generatePassword(passwordLength, botonsitos) {
   paragraphPassword.value = strongPassword;
 }
 
-//api
-function fetchData(API) {
-  fetch(API)
-    .then((response) => response.json())
-    .then((data) => {
-      words = data.quotes.map((quote) => quote.text);
-      words = words.join("").split(" ").sort();
-    });
+
+async function fetchData() {
+  const { data } = await api('');
+
+  console.log(data);
+  words = data;
+  // words = data.quotes.map((quote) => quote.text);
+  // words = data.join("").split(" ").sort();
+  // console.log(data.join(""));
+  // console.log(data.join("").split(" "));
+
 }
-fetchData(API);
+fetchData();
+
 
 
 function getRandomNumber(min, max) {
@@ -128,6 +137,7 @@ buttonCopy.addEventListener("click", () => {
 inputLength.addEventListener("input", (e) => {
   passwordLengthParagraph.innerText = e.target.value;
 });
+
 
 
 
