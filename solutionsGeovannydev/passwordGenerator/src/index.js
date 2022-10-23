@@ -4,12 +4,7 @@ const buttonCopy = document.querySelector("#button-copy");
 const inputLength = document.querySelector("#input-length");
 const passwordLengthParagraph = document.querySelector("#password-length");
 
-
-// const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5";
-const  api = axios.create({
-  baseURL: 'https://random-word-api.herokuapp.com/all',
-});
-
+const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5";
 
 const letters = [
   "a",
@@ -39,6 +34,7 @@ const letters = [
   "y",
   "z",
 ];
+
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const symbols = ["'", ":", "!", "@", "#", "$", "^", ")", "&", "*", "%", "-"];
 let words = [];
@@ -80,21 +76,16 @@ function generatePassword(passwordLength, botonsitos) {
   paragraphPassword.value = strongPassword;
 }
 
-
-async function fetchData() {
-  const { data } = await api('');
-
-  // console.log(data);
-  words = data;
-  // words = data.quotes.map((quote) => quote.text);
-  // words = data.join("").split(" ").sort();
-  // console.log(data.join(""));
-  // console.log(data.join("").split(" "));
-
+function fetchData(API) {
+  fetch(API)
+    .then((response) => response.json())
+    .then((data) => {
+      words = data.quotes.map((quote) => quote.text);
+      words = words.join("").split(" ").sort();
+    });
 }
-fetchData();
 
-
+fetchData(API);
 
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1));
@@ -107,12 +98,7 @@ function copyToClipboard(target) {
     alert("Tienes que generar una contraseña");
   } else {
     window.navigator.clipboard.writeText(value);
-    const message = document.querySelector('#message-after-copying');
-    message.innerHTML = 'Copiaste la contraseña';
-    // alert("Copiaste la contraseña");
-    setTimeout(()=> {
-      message.innerHTML='';
-    },2000);
+    alert("Copiaste la contraseña");
   }
 }
 
@@ -129,8 +115,6 @@ form.addEventListener("submit", (event) => {
 
   if (checks.words) {
     formElement.letters.checked = false;
-    formElement.numbers.checked = false;
-    formElement.symbols.checked = false;
   }
 
   generatePassword(passwordLength, checks);
@@ -144,8 +128,3 @@ buttonCopy.addEventListener("click", () => {
 inputLength.addEventListener("input", (e) => {
   passwordLengthParagraph.innerText = e.target.value;
 });
-
-
-
-
-
