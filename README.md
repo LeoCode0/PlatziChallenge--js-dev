@@ -1,63 +1,26 @@
-# PlatziChallenge: Crea tu portafolio como javaScript developer
+# ¡Muestranos como mejoraste los proyectos!
 
-En este repositorio encontrarás una serie de proyectos hechos por un **JavaScript developer**, la rama **main** 
-
-Aquí abajo están la lista de mis proyectos
-
-## Password generator
-
-link del proyecto: https://eufanzky.github.io/password-generator/
-
-El generador de contraseñas tiene las siguientes características:
-
-- Poder copiar la contraseña
-- Definir el total de caracteres que pueda llegar a tener nuestra contraseña
-- Generar contraseñas con solo numeros
-- Generar contraseñas con solo letras
-- Generar contraseñas con solo simbolos
-- Generar contraseñas con combinaciones de todo lo anterior
-- Generar contraseñas con palabras
-
-Tecnologías
-
-- HTML
-- CSS
-- JS
-- Axios
-
-Issues:
-
-- [Mejora el algoritmo de creación de contraseñas](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/3) 💻
-- [¡Las clases son un desastre! Implementa BEM para solucionar esto](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/4) 🎨
-- [Mejora la UI](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/5) ✨
-- [Implementa librerías](https://github.com/LeoCode0/PlatziChallenge--js-dev/issues/6) 🌐
-
-## Tic tac toe / tres en raya / el gato / ta te ti 🎮
-
-¿Recuerdas ese famoso juego donde tenías que poner circulitos (o) y equis (x)? El objetivo era básicamente obtener 3 símbolos iguales en línea ya sea vertical, horizontal o diagonal. Pues vamos a recrearlo desde 0 en web usando HTML, CSS y **JavaScript**.
-
-Especificamente contará con las siguientes características 👇
-
-- Poder escoger el símbolo que queremos usar (o) - (x)
-- Dibujar en el DOM el símbolo deseado
-- Poder declarar al ganador
-- Tener multijugador local
-- Tener un algoritmo que juegue contra nosotros
-- Tener historial de victorias / derrotas
-- Tener contador de victorias
-
-Tecnologías
-
-- HTML
-- CSS
-- JS
-
-Issues:
-
-## Calculator
+En esta rama especial estaremos recopilando todas las soluciones de la comunidad
 
 🚧WIP🚧
 
-## Github profile
+¿Quieres saber como mandar tus proyectos? Aquí te dejo el paso a paso para que puedas lograrlo 🔥
 
-🚧WIP🚧
+1. Haz fork del proyecto (si ya lo hiciste no olvides sincronizar tu repositorio )
+   ![fork](https://imgur.com/h2DNJ0y.png)
+2. Crea una nueva rama local llamada "solutions-username" (por ejemplo en mi caso sería "solution-LeoCode0")
+
+```
+git checkout -b solutions-[username]
+```
+
+3. En esa rama crea una carpeta llamada "solutionsUsername" (en mi caso sería "solutionsLeoCode0") y mete allí todos los proyectos de este challenge con sus issues resueltos
+
+![carpetas](https://imgur.com/f45UKTr.png)
+
+4. Manda un Pull Request a la rama "solutions" al [repositorio](https://github.com/LeoCode0/PlatziChallenge--js-dev) base desde la rama de tu repositorio llamada "solutions-username"
+
+5. Espera a que tu PR sea aceptado 👀
+
+> 🚧 IMPORTANTE 🚧
+> Tu PR no debería ser a la rama main y tampoco debería afectar a carpetas de otras personas, de ser así, tu PR no será aceptado
