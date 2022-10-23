@@ -84,7 +84,7 @@ function generatePassword(passwordLength, botonsitos) {
 async function fetchData() {
   const { data } = await api('');
 
-  console.log(data);
+  // console.log(data);
   words = data;
   // words = data.quotes.map((quote) => quote.text);
   // words = data.join("").split(" ").sort();
@@ -107,7 +107,12 @@ function copyToClipboard(target) {
     alert("Tienes que generar una contraseña");
   } else {
     window.navigator.clipboard.writeText(value);
-    alert("Copiaste la contraseña");
+    const message = document.querySelector('#message-after-copying');
+    message.innerHTML = 'Copiaste la contraseña';
+    // alert("Copiaste la contraseña");
+    setTimeout(()=> {
+      message.innerHTML='';
+    },2000);
   }
 }
 

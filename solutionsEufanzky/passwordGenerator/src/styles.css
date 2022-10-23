@@ -65,9 +65,21 @@ main {
   font-size: 2.5rem;
   color: var(--midnight-gree-eagle-green);
 }
+.copy-div {
+  position: relative;
+}
 .copy-button:hover {
   color: var(--caribbean-green);
 }
+#message-after-copying {
+  font-size: 1.5rem;
+  color: var(--orange-yello-crayola);
+  font-weight: bolder;
+  position: absolute;
+  top: 44px;
+  left: 3px;
+}
+
 
 /*second part: irange input*/
 .define-your-password-text {
@@ -184,6 +196,7 @@ main {
   color: var(--orange-yello-crayola);
   cursor: pointer;
 }
+
 
 
 
