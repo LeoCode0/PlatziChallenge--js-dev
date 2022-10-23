@@ -1,12 +1,12 @@
 # PlatziChallenge: Crea tu portafolio como javaScript developer
 
-En este repositorio encontrarás una serie de proyectos para fortalecer tu portafolio como **JavaScript developer**, la rama **main** tendrá una serie de proyectos los cuales necesitan ser arreglados, en el apartados de issues de este mismo repositorio podrás ver todo lo que hace falta arreglar.
+En este repositorio encontrarás una serie de proyectos hechos por un **JavaScript developer**, la rama **main** 
 
-Aquí abajo tienes la lista de proyectos que se actualizarán constantemente
+Aquí abajo están la lista de mis proyectos
 
 ## Password generator
 
-Generador de contraseñas las siguientes características:
+El generador de contraseñas tiene las siguientes características:
 
 - Poder copiar la contraseña
 - Definir el total de caracteres que pueda llegar a tener nuestra contraseña

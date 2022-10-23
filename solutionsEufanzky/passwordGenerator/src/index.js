@@ -129,6 +129,8 @@ form.addEventListener("submit", (event) => {
 
   if (checks.words) {
     formElement.letters.checked = false;
+    formElement.numbers.checked = false;
+    formElement.symbols.checked = false;
   }
 
   generatePassword(passwordLength, checks);
