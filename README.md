@@ -6,6 +6,8 @@ Aquí abajo están la lista de mis proyectos
 
 ## Password generator
 
+link del proyecto: https://eufanzky.github.io/password-generator/
+
 El generador de contraseñas tiene las siguientes características:
 
 - Poder copiar la contraseña
