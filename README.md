@@ -21,7 +21,7 @@ Tecnologías
 - HTML
 - CSS
 - JS
-- Axios (Opcional)
+- Axios
 
 Issues:
 
