@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Password generator by Platzi community">
+  <title>Password generator</title>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+
+<body>
+  <h1 class="title">PASSWORD GENERATOR</h1>
+  <form class="form" id="form">
+    <p class="password">Aquí aparecerá tu contraseña</p>
+    <input type="text" disabled id="password">
+    <div class="copy-div">
+      <button type="button" disabled id="button-copy">Copiar contraseña</button>
+      <p id="message-after-copying"></p>
+    </div>
+    <p class="define-your-password-text">Define el total de caracteres de tu contraseña</p>
+    <div class="option">
+      <p id="password-length">15</p>
+      <input class="range-input" type="range" name="length" id="input-length" min="10" max="20">
+    </div>
+    <p class="option">
+      <input class="checkbox-input" type="checkbox" name="letters" id="letters">
+      <label for="letters">Incluir letras</label>
+    </p>
+    <p class="option">
+      <input class="checkbox-input" type="checkbox" name="numbers" id="numbers">
+      <label for="numbers"">Incluir numeros</label>
+    </p>
+    <p class="option">
+      <input class="checkbox-input" type="checkbox" name="symbols" id="symbols">
+      <label for="symbols">Incluir simbolos</label>
+    </p>
+    <p class="option">
+      <input class="checkbox-input" type="checkbox" name="words" id="words">
+      <label for="words">Incluir palabras</label>
+    </p>
+    <div class="button-div">
+      <button type="submit" id="generate-button">Genera tu fuerte contraseña</button>
+    </div>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./src/index.js"></script>
+</body>
+
+</html>
+
