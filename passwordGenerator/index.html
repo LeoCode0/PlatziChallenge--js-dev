@@ -1,47 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Password generator by Platzi community">
-  <title>Password generator</title>
-  <link rel="stylesheet" href="./src/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles.css">
+    <title>Generador de Contraseñas Ultraseguras</title>
 </head>
-
 <body>
-  <form class="form" id="form">
-    <p class="password">Aquí aparecerá tu contraseña</p>
-    <input type="text" disabled id="password">
-    <button type="button" disabled id="button-copy">Copiar contraseña</button>
-    <div class="option">
-      <p id="password-length">55</p>
-      <input type="range" name="length" id="input-length" min="10" max="100">
-      <p>Define el total de caracteres de tu contraseña</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="letters" id="">
-      <p>Incluir letras</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="numbers" id="">
-      <p>Incluir numeros</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="symbols" id="">
-      <p>Incluir simbolos</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="words" id="">
-      <p>Incluir palabras</p>
-    </div>
-    <div class="option">
-      <button type="submit" id="generate-button">Genera tu fuerte contraseña</button>
-    </div>
-  </form>
+    <header>
+        <nav class="nav">
+            <img class="logo" src="https://img.icons8.com/ios7/12x/private2.png" />
+            <span class="navTittle">Generador de Contraseñas</span><span class="tagline">Ultraseguras</span> 
+            
+        </nav>  
+    </header>
 
-  <script src="./src/index.js"></script>
+    <main class="main-container">
+        <section class="message-container">
+            <p>Bienvenido a nuestro generador de Contraseñas ULTRASEGURAS, aquí podrás ser tú quien determine la cantidad de caracteres que tendrá tu contraseña, así como los tipos de caracteres de la misma y finalmente tendrás una contraseña que de acuerdo a tus exigencias, podría ser indescifrable por siglos.</p>
+        </section>
+        <section class="section-container">
+            <form class="form-container">
+                <div class="contain-options">
+                    <ul class="contain-type-password">
+                        <li>
+                            <label for="input-length">
+                                <p>Define el total de caracteres</p>
+                                <span class="password-length">55</span>
+                            <input type="range" name="length" class="input-length" min="10" max="100">
+                            </label>
+                        </li>
+    
+                        <li>
+                            <input type="checkbox" name="letters">
+                            <p>Incluir letras</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="numbers">
+                            <p>Incluir números</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="symbols">
+                            <p>Incluir símbolos</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="words" class="check-words">
+                            <p>Incluir palabras</p>
+                        </li>
+                    </ul>
+                    <div class="contain-button-generator">
+                        <button class="button-generator-password" type="submit">Genera tu contraseña</button>
+                    </div>  
+                </div>
+               
+                <div class="contain-password" name="contain-password">
+                    <span class="text-password">Tu contraseña Ultrasegura es:</span>
+                    <div class="contain-button-and-password">
+                        <span type="text" id="sample" class="password" disabled contenteditable></span>
+                    
+                        <a href="#" class="button" ><button class="copy-button" type="button">
+                            <img src="https://img.icons8.com/plasticine/2x/copy.png" alt="icon-copy" class="icon">
+                        </button></a>
+                    </div>
+                    
+                </div>
+
+            </form>                
+        </section> 
+    </main>
+
+    <footer>
+        <ul class="social-media">
+            <li>
+                <a href="https://twitter.com/Lizzie_2824" target="_blank"><img src="https://img.icons8.com/dotty/2x/twitter.png" alt="icon-twitter"></a>
+            </li>
+            <li>
+                <a href="https://github.com/LizzQuintero" target="_blank"><img src="https://img.icons8.com/dotty/2x/github.png" alt="icon-GitHub" ></a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/lizz-quint-75242a236/" target="_blank"><img src="https://img.icons8.com/dotty/2x/linkedin.png" alt="icon-linkedIn"></a>
+            </li>
+            <li>
+                <a href="https://discord.gg/FvB663tq" target="_blank"><img src="https://img.icons8.com/dotty/2x/discord-logo.png" alt="icon-discord"></a>
+            </li>
+        </ul>
+    </footer>
 </body>
-
+<script src="./src/index.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </html>
