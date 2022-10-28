@@ -59,7 +59,6 @@ function generatePassword(passwordLengthChosen, checkBoxChosen) {
     }
 
     if (checkBoxChosen.words) {
-      arrayOfArrays = [];
       arrayOfArrays.push(words);
     }
 
@@ -118,13 +117,24 @@ form.addEventListener("submit", (event) => {
       symbols: formElement.symbols.checked,
     };
 
-    if (checks.words) {
-      formElement.letters.checked = false;
-      formElement.numbers.checked = false;
-      formElement.symbols.checked = false;
-      }
-      
-    generatePassword(passwordLength, checks);
+    if((checks.letters==false) && (checks.words==false) && (checks.numbers==false) && (checks.symbols==false))
+    {
+      alert("Elige primero una de las opciones")
+      password.innerText = " ";
+    } 
+      else if 
+        ((checks.words==true) && ((checks.letters==true) || (checks.numbers==true) || (checks.symbols==true)))
+        {
+          alert("No puedes mezclar palabras con el resto de opciones")
+          formElement.letters.checked = false;
+          formElement.numbers.checked = false;
+          formElement.symbols.checked = false;
+          formElement.words.checked = false;
+          password.innerText = " ";
+        }  else {
+                  generatePassword(passwordLength, checks);
+    }  
+
     buttonCopy.disabled = false;
   });
   

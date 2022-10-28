@@ -78,7 +78,7 @@ h1{
 
 }
 
-#modal{
+/* #modal{
   position: absolute;
   top: 50%;
   left: 0;
@@ -96,4 +96,4 @@ h1{
 
 #modal.invisible{
   display: none;
-}
+} */
