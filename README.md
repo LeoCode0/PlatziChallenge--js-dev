@@ -2,6 +2,8 @@
 
 En esta rama especial estaremos recopilando todas las soluciones de la comunidad
 
+🚧WIP🚧
+
 ¿Quieres saber como mandar tus proyectos? Aquí te dejo el paso a paso para que puedas lograrlo 🔥
 
 1. Haz fork del proyecto (si ya lo hiciste no olvides sincronizar tu repositorio )
@@ -14,6 +16,9 @@ git checkout -b solutions-[username]
 
 3. En esa rama crea una carpeta llamada "solutionsUsername" (en mi caso sería "solutionsLeoCode0") y mete allí todos los proyectos de este challenge con sus issues resueltos
 
+![carpetas](https://imgur.com/f45UKTr.png)
+
+4. Manda un Pull Request a la rama "solutions" al [repositorio](https://github.com/LeoCode0/PlatziChallenge--js-dev) base desde la rama de tu repositorio llamada "solutions-username"
 
 5. Espera a que tu PR sea aceptado 👀
 
