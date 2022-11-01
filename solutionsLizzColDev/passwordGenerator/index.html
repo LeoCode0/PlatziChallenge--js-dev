@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles.css">
+    <title>Generador de Contraseñas Ultraseguras</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="https://platzi.com/" class="nav-contain-logo">
+                    <div class="nav-contain-logo">
+                        <img class="logo-platzi" src="https://static.platzi.com/media/challenge/badge-js-dev.png" />
+                        <p>#PlatziChallenge</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div>
+                <span class="navTittle">Generador de Contraseñas</span><span class="tagline">Ultraseguras</span> 
+            </div>
+            
+            
+        </nav>  
+    </header>
+
+    <main class="main-container">
+        <section class="message-container">
+            <p>Bienvenido a nuestro generador de Contraseñas ULTRASEGURAS, aquí podrás ser tú quien determine la cantidad de caracteres que tendrá tu contraseña, así como los tipos de caracteres de la misma y finalmente tendrás una contraseña que de acuerdo a tus exigencias, podría ser indescifrable por siglos.</p>
+        </section>
+        <section class="section-container">
+            <form class="form-container">
+                <div class="contain-options">
+                    <ul class="contain-type-password">
+                        <li>
+                            <label for="input-length" class="paragraph-input-length">
+                                <p>Define el total de caracteres</p>
+                                <span class="password-length">55</span>
+                            <input type="range" name="length" class="input-length" min="10" max="100">
+                            </label>
+                        </li>
+    
+                        <li>
+                            <input type="checkbox" name="letters">
+                            <p>Incluir letras</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="numbers">
+                            <p>Incluir números</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="symbols">
+                            <p>Incluir símbolos</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="words" class="check-words">
+                            <p>Incluir palabras</p>
+                        </li>
+                    </ul>
+                    <div class="contain-button-generator">
+                        <button class="button-generator-password" type="submit">Genera tu contraseña</button>
+                    </div>  
+                </div>
+               
+                <div class="contain-password" name="contain-password">
+                    <span class="text-password">Tu contraseña Ultrasegura es:</span>
+                    <div class="contain-button-and-password">
+                        <span type="text" class="password" disabled contenteditable></span>
+                    
+                        <a href="#" class="button" ><button class="copy-button" type="button">
+                            <img src="https://img.icons8.com/plasticine/2x/copy.png" alt="icon-copy" class="icon">
+                        </button></a>
+                    </div>
+                    
+                </div>
+
+            </form>                
+        </section> 
+    </main>
+
+    <footer>
+        <ul class="social-media">
+            <li>
+                <p>Aprende en nuestras redes:</p>
+            </li>
+            <li>
+                <a href="https://twitter.com/platzi" target="_blank"><img src="https://img.icons8.com/ios-glyphs/344/twitter--v1.png" alt="icon-twitter"></a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UC55-mxUj5Nj3niXFReG44OQ" target="_blank"><img src="https://img.icons8.com/ios-glyphs/2x/youtube-play.png" alt="icon-GitHub" ></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/platzi/" target="_blank"><img src="https://img.icons8.com/ios-glyphs/2x/instagram-new.png" alt="icon-linkedIn"></a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/platzi" target="_blank"><img src="https://img.icons8.com/ios-filled/2x/facebook-f.png" alt="icon-discord"></a>
+            </li>
+        </ul>
+    </footer>
+</body>
+<script src="./src/index.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</html>
