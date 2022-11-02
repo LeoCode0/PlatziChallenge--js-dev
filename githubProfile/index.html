@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/styles.css">
+  <title>My github profile</title>
+</head>
+
+<body>
+  <form class="searchBar" id="form-search">
+    <label for="username">Username</label>
+    <input type="text" placeholder="Escribe aqui el username" name="username" id="search-user">
+    <button type="submit">Buscar</button>
+  </form>
+  <section class="error invisible">
+    <p id="error"></p>
+  </section>
+  <section class="profile">
+    <div class="profile--user">
+      <h1 class="profile--fullname" id="fullname">
+        name
+      </h1>
+      <p class="profile--username" id="username">
+        Username
+      </p>
+    </div>
+    <div class="profile--container">
+      <img src="" alt="" class="profile--img" id="img">
+    </div>
+    <p class="profile--bio" id="bio">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi dicta aperiam reprehenderit magni doloribus
+      odit ipsa quos rem aliquam ad sunt rerum necessitatibus placeat quibusdam, nulla consectetur. Vero, qui
+      asperiores?
+    </p>
+  </section>
+  <script src="./src/domElements.js"></script>
+  <script src="./src/index.js"></script>
+</body>
+
+</html>
