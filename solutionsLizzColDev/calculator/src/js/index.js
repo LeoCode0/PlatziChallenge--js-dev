@@ -2,8 +2,7 @@ import * as calculator from "./operations.js";
 
 let result = 0
 let currentNumber = ""
-let currentOperation
-let last
+let arrayOperation = []
 
 numberButtons.forEach(button => {
   button.addEventListener("click", (event) => {
@@ -12,52 +11,37 @@ numberButtons.forEach(button => {
   })
 })
 
-// ❌
-
 add.addEventListener("click", (event) => {
   printCharacter(event)
-  if(currentOperation){
-    result += currentOperation(currentNumber)
-    currentOperation = undefined
-  }else{
-    currentOperation = calculator.sum(currentNumber)
-  }
+  arrayOperation.push(currentNumber)
+  arrayOperation.push("+")
+  console.log("[" + arrayOperation + "]")
   currentNumber = ""
 })
 
 sub.addEventListener("click", (event) => {
   printCharacter(event)
-  if(currentOperation){
-    result -= currentOperation(currentNumber)
-    currentOperation = undefined
-  }else{
-    currentOperation = calculator.subtract(currentNumber)
-  }
+  arrayOperation.push(currentNumber)
+  arrayOperation.push("-")
+  console.log("[" + arrayOperation + "]")
   currentNumber = ""
 })
 
 divider.addEventListener("click", (event) => {
   printCharacter(event)
-  if(currentOperation){
-    result /= currentOperation(currentNumber)
-    currentOperation = undefined
-  }else{
-    currentOperation = calculator.division(currentNumber)
-  }
+  arrayOperation.push(currentNumber)
+  arrayOperation.push("/")
+  console.log("[" + arrayOperation + "]")
   currentNumber = ""
 })
 
 multi.addEventListener("click", (event) => {
   printCharacter(event)
-  if(currentOperation){
-    result = 1
-    result *= currentOperation(currentNumber)
-    currentOperation = undefined
-  }else{
-    currentOperation = calculator.multiply(currentNumber)
-  }
+  arrayOperation.push(currentNumber)
+  arrayOperation.push("*")
+  console.log("[" + arrayOperation + "]")
   currentNumber = ""
-  last = "multi"
+
 })
 
 del.addEventListener("click", () => {
@@ -67,38 +51,86 @@ del.addEventListener("click", () => {
     result = Number(newValue)
   }
   screen.value = newValue
+  arrayOperation.pop()
 })
 
 delAll.addEventListener("click", () => {
   result = 0
   currentNumber = ""
-  currentOperation = undefined
   screen.value = ""
+  arrayOperation = []
 })
 
 equal.addEventListener("click", () => {
-  // ❌
-  if(currentOperation){
-    switch (last) {
-      case "multi":
-        result = currentOperation(currentNumber)
-        break;
-      default:
-        break;
-    }
-    currentOperation = undefined
-    currentNumber = ""
-  }
-  // ❌
-  if(currentNumber !== ""){
-    result *= Number(currentNumber)
-    currentNumber = ""
-  }
-  screen.value = result
+  arrayOperation.push(currentNumber)
+  console.log("[" + arrayOperation + "]" + "  array oficial")
+
+    multiDiv(arrayOperation)
+    sumSub(arrayOperation)
+
+  screen.value = arrayOperation[0]
+  console.log("[" + arrayOperation + "]" + " resultado")
+  currentNumber = arrayOperation[0]
+  arrayOperation.pop()
+
 })
 
+function multiDiv() {
+
+  const arra = arrayOperation; 
+
+  for (let i=0; i < arra.length; i++) {
+    for (let i=0; i < arra.length; i++) {
+        if(arra[i] == "*" || arra[i] == "/"){
+          switch(arra[i]){
+            case "*":
+              arra[i-1] =calculator.multiply(arra[i-1], arra[i+1])
+              arra.splice(i, 2)
+              break;
+            case "/":
+              arra[i-1] = calculator.division(arra[i-1], arra[i+1])
+              arra.splice(i, 2)
+              console.log("[" + arra + "]" + " división")
+              break;
+              default:
+              break;
+          }
+          i = i-1;
+        }
+    }
+  }
+  return arra;
+}
+
+function sumSub() {
+
+  const arra = arrayOperation; 
+
+  for (let i=0; i < arra.length; i++) {
+    for (let i=0; i < arra.length; i++) {
+        if(arra[i] == "+" || arra[i] == "-"){
+          switch(arra[i]){
+            case "+":
+              arra[i-1] =calculator.sum(arra[i-1], arra[i+1])
+              arra.splice(i, 2)
+              break;
+            case "-":
+              arra[i-1] = calculator.subtract(arra[i-1], arra[i+1])
+              arra.splice(i, 2)
+              break;
+              default:
+              break;
+          }
+          i = i-1;
+        }
+    }
+  }
+  return arra;
+}
+
+
 function printCharacter(event){
-  // ❌
+  
   const target = event.target
   
   screen.value += target.textContent

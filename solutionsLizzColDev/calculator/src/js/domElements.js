@@ -1,4 +1,4 @@
-const screen = document.querySelector(".calculator--input")
+const screen = document.querySelector(".screen--input")
 const numberButtons = document.querySelectorAll(".calculator--number")
 const add = document.querySelector("#add")
 const sub = document.querySelector("#subtract")
