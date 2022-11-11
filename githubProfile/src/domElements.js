@@ -7,3 +7,6 @@ const searchInput = document.querySelector("#search-user")
 
 const profile = document.querySelector(".profile")
 const errorContainer = document.querySelector(".error")
+
+const firstFollower = document.querySelector("#first")
+const lastFollower = document.querySelector("#last")

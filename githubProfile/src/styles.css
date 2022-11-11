@@ -27,6 +27,12 @@ body{
   display: none;
 }
 
+.profile{
+  width: 90%;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
 .profile, .error{
   border: 1px solid var(--border-color);
   padding: 10px;
@@ -58,6 +64,10 @@ body{
   border-radius: 50%;
   width: 120px;
   height: 120px;
+}
+
+.profile--bio{
+  text-align: center;
 }
 
 
