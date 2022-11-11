@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Password generator by Platzi community">
+  <title>Password generator</title>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+
+<body>
+  <h1>Generador de contraseñas</h1>
+  <form class="form" id="form">
+    <div class="input-container">
+      <input type="text" disabled id="password" placeholder="Aquí aparecerá tu contraseña">
+      <button type="button" disabled id="button-copy">
+        <img src="https://cdn-icons-png.flaticon.com/512/1621/1621635.png" alt="">
+      </button>
+    </div>
+    <div class="">
+      <input type="range" name="length" id="input-length" min="10" max="100">
+      <p>Define el total de caracteres de tu contraseña: <span id="password-length">50</span></p><br>
+    </div>
+
+    <div id="inputPreview">
+      <input id="letter" type="checkbox" class="css-checkbox" name="letters">
+      <label for="letter">Incluir letras</label>
+      <input id="numbers" type="checkbox" class="css-checkbox" name="numbers">
+      <label for="numbers">Incluir números</label>
+      <input id="symbols" type="checkbox" class="css-checkbox" name="symbols">
+      <label for="symbols">Incluir símbolos</label>
+      <input id="words" type="checkbox" class="css-checkbox" name="words">
+      <label for="words">Incluir palabras</label>
+    </div>
+
+    <div class="option">
+      <button type="submit" id="generate-button">Generar contraseña</button>
+    </div>
+  </form>
+
+
+  <div class="author">
+    <a href="http://xfirepc.com" target="_blank">Developed by @XfirePc</a>
+  </div>
+  <script src="./src/index.js"></script>
+</body>
+
+</html>
