@@ -2,18 +2,23 @@ const board = document.querySelector("#board");
 const modal = document.querySelector("#modal")
 const listOfSlots = [];
 const rows = []
+const diagonal =[] // un array de arrays con las 3 casillas
+const columnas = []
 let listOfMovements = [];
 let currentSlot;
+let ganador = false
 
 let buttons = document.querySelectorAll(".options--button");
 
 let player1 = {
   active: false,
   value: "",
+  marcadorP1: 0
 };
 let player2 = {
   active: false,
   value: "",
+  marcadorP2: 0
 };
 
 buttons = Array.from(buttons);
@@ -23,7 +28,6 @@ board.classList.add("disabled");
 function printValue(event) {
   const target = event.target;
   currentSlot = target;
-
   if (player1.active) {
     target.innerText = player1.value;
     player1.active = false;
@@ -47,6 +51,11 @@ function clearProcess() {
 
 function createSlots() {
   let subArray = []
+  let subColum1 = []
+  let subColum2 = []
+  let subColum3 = []
+  let diagonal1 = []
+  let diagonal2 = []
   for (let index = 0; index < 9; index++) {
     const slot = document.createElement("div");
     slot.id = `slot-${index}`
@@ -54,11 +63,49 @@ function createSlots() {
 
     listOfSlots.push(slot);
     subArray.push(slot)
+
+    switch (index) {
+      case 0:subColum1.push(slot)
+             diagonal1.push(slot)
+        break;
+      case 1:subColum2.push(slot)
+             
+        break;
+      case 2:subColum3.push(slot)
+             diagonal2.push(slot)
+        break;
+      case 3:subColum1.push(slot)
+        break;
+      case 4:subColum2.push(slot)
+            diagonal1.push(slot)
+            diagonal2.push(slot)
+        break;
+      case 5:subColum3.push(slot)
+        
+      break;
+      case 6:subColum1.push(slot)
+            diagonal2.push(slot)
+        break;
+      case 7:subColum2.push(slot)
+            
+        break;
+      case 8:subColum3.push(slot)
+        diagonal1.push(slot)
+      break;
+      default:
+        break;
+    }
+
     if(subArray.length === 3){
       rows.push(subArray)
       subArray = []
     }
   }
+  columnas.push(subColum1)
+  columnas.push(subColum2)
+  columnas.push(subColum3)
+  diagonal.push(diagonal1)
+  diagonal.push(diagonal2)
 
   listOfMovements = [...listOfSlots]
 
@@ -81,19 +128,47 @@ function checkWinner(){
   const combinations = rows.map(slots => {
     return slots.map(slot => slot.textContent).join("")
   })
+  const combinationsDiagonal = diagonal.map(slots => {
+    return slots.map(slot => slot.textContent).join("")
+  })
+  const combinationsColumna = columnas.map(slots => {
+    return slots.map(slot => slot.textContent).join("")
+  })
 
-  if(listOfMovements.length === 0){
-    alert("Nadie gano, empate")
-  }else{
-    if(combinations.some(combination => combination === player1.value.repeat(3))){
-      winnerProcess(player1, "Tu user")
-    }
-  
-    if(combinations.some(combination => combination === player2.value.repeat(3))){
-      winnerProcess(player2,"Computadora")
-    }
+  if(combinations.some(combination => combination === player1.value.repeat(3))){
+    winnerProcess(player1, "Tu user") 
+    ganador = true
+    player1.marcadorP1 += player1.marcadorP1
+  }
+  if(combinationsDiagonal.some(combination => combination === player1.value.repeat(3))){
+    winnerProcess(player1, "Tu user") 
+    ganador = true
+    player1.marcadorP1 += player1.marcadorP1
+  }
+  if(combinationsColumna.some(combination => combination === player1.value.repeat(3))){
+    winnerProcess(player1, "Tu user")
+    ganador = true 
+    player1.marcadorP1 += player1.marcadorP1
   }
 
+  if(combinations.some(combination => combination === player2.value.repeat(3))){
+    winnerProcess(player2,"Computadora")
+    ganador = true
+    player2.marcadorP2 += player2.marcadorP2
+  } 
+  if(combinationsDiagonal.some(combination => combination === player2.value.repeat(3))){
+    winnerProcess(player2, "Computadora")
+    ganador = true 
+    player2.marcadorP2 += player2.marcadorP2
+  }
+  if(combinationsColumna.some(combination => combination === player2.value.repeat(3))){
+    winnerProcess(player2, "Computadora") 
+    ganador = true
+    player2.marcadorP2 += player2.marcadorP2
+  }
+  if(listOfMovements.length === 0 && ganador == false ){
+    alert("Nadie ganó, empate")
+  } 
 }
 
 function winnerProcess(player, playerName) {
@@ -106,7 +181,7 @@ function winnerProcess(player, playerName) {
   modal.classList.remove("invisible")
 
   modal.innerHTML = `
-    <h2>Ha ganado el ${playerName} ${player.value}<h2>
+    <h2>Ha ganado ${playerName} ${player.value}</h2>
   `  
 }
 
@@ -131,6 +206,7 @@ buttons.map((button) => {
 
     buttons.map((button) => {
       button.disabled = true;
+      board.style.cursor = "pointer" 
     });
   });
 });

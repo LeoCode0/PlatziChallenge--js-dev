@@ -12,18 +12,17 @@ numberButtons.forEach(button => {
 })
 
 add.addEventListener("click", (event) => {
+
   printCharacter(event)
   arrayOperation.push(currentNumber)
-  arrayOperation.push("+")
-  console.log("[" + arrayOperation + "]")
-  currentNumber = ""
+    arrayOperation.push("+")
+    currentNumber = ""    
 })
 
 sub.addEventListener("click", (event) => {
   printCharacter(event)
   arrayOperation.push(currentNumber)
   arrayOperation.push("-")
-  console.log("[" + arrayOperation + "]")
   currentNumber = ""
 })
 
@@ -31,7 +30,6 @@ divider.addEventListener("click", (event) => {
   printCharacter(event)
   arrayOperation.push(currentNumber)
   arrayOperation.push("/")
-  console.log("[" + arrayOperation + "]")
   currentNumber = ""
 })
 
@@ -39,9 +37,7 @@ multi.addEventListener("click", (event) => {
   printCharacter(event)
   arrayOperation.push(currentNumber)
   arrayOperation.push("*")
-  console.log("[" + arrayOperation + "]")
   currentNumber = ""
-
 })
 
 del.addEventListener("click", () => {
@@ -51,7 +47,7 @@ del.addEventListener("click", () => {
     result = Number(newValue)
   }
   screen.value = newValue
-  arrayOperation.pop()
+  arrayOperation.pop() 
 })
 
 delAll.addEventListener("click", () => {
@@ -62,6 +58,7 @@ delAll.addEventListener("click", () => {
 })
 
 equal.addEventListener("click", () => {
+
   arrayOperation.push(currentNumber)
   console.log("[" + arrayOperation + "]" + "  array oficial")
 
@@ -69,15 +66,13 @@ equal.addEventListener("click", () => {
     sumSub(arrayOperation)
 
   screen.value = arrayOperation[0]
-  console.log("[" + arrayOperation + "]" + " resultado")
   currentNumber = arrayOperation[0]
   arrayOperation.pop()
-
 })
 
 function multiDiv() {
 
-  const arra = arrayOperation; 
+  const arra = arrayOperation;
 
   for (let i=0; i < arra.length; i++) {
     for (let i=0; i < arra.length; i++) {
@@ -90,7 +85,6 @@ function multiDiv() {
             case "/":
               arra[i-1] = calculator.division(arra[i-1], arra[i+1])
               arra.splice(i, 2)
-              console.log("[" + arra + "]" + " división")
               break;
               default:
               break;
@@ -129,8 +123,9 @@ function sumSub() {
 }
 
 
+
 function printCharacter(event){
-  
+
   const target = event.target
   
   screen.value += target.textContent
