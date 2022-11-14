@@ -2,7 +2,7 @@
 
 Primer proyecto del reto de portafolio como JavaScript developer, un generador de contraseñas que tiene algunas características interesantes para crear contraseñas seguras y mantener a salvo nuestras cuentas y redes sociales en internet.
 
-La aplicación puede verse desde: [https://xfirepc.github.io/proyects/passwd/index.html](https://xfirepc.github.io/proyects/passwd/index.html)
+La aplicación puede verse desde: [https://xfirepc.github.io/proyects/passwd](https://xfirepc.github.io/proyects/passwd/index.html)
 
 ---------
 ## Pantallas de la aplicación
