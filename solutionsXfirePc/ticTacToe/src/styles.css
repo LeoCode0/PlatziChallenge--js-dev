@@ -1,0 +1,153 @@
+:root{
+  --bg-color: #121f3d;
+  --text-color: white;
+  --border-color: #40587c;
+  --button-text-color: rgb(131, 217, 136);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+body{
+  background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  color: var(--text-color);
+  font-family: sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.board{
+  display: grid;
+  margin: 0 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+}
+
+.board div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  transition: all .5s;
+  filter: invert(1);
+}
+
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.board div:hover{
+  background-color: var(--border-color);
+}
+
+.disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.options{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.options p{
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.options--button{
+  font-size: 30px;
+  border: 1px solid black;  
+  background: transparent;
+  border-radius: 15px;
+  height: 80px;
+  width: 100px;
+  margin: 10px 20px;
+  filter: invert(1);
+}
+
+.options--button:hover{
+  cursor: pointer;
+}
+
+.options--button:disabled{
+  cursor: not-allowed;
+
+}
+
+#modal{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 50%;
+  height: 40vh;
+  margin: 0 auto;
+  font-size: 30px;
+  color: white;
+  font-weight: 900;
+  background-color: #40587c;
+  border-radius: 15px;
+}
+
+
+#modal.invisible{
+  display: none;
+}
+
+
+#slot-0 { border-radius: 15px 0px 0px 0px; }
+#slot-2 { border-radius: 0px 15px 0px 0px; }
+#slot-6 { border-radius: 0px 0px 0px 15px; }
+#slot-8 { border-radius: 0px 0px 15px 0px; }
+
+
+@media screen and (max-width: 390px) {
+  .board {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+
+.author {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-style: italic;
+  font-size: 13px;
+  opacity: 0.4;
+}
+
+.author:hover{
+  opacity: 1;
+}
+.author a {
+  color: #fff;
+  text-decoration: none;
+}

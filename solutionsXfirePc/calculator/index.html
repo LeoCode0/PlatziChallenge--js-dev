@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/styles/styles.css">
+  <title>Calculator</title>
+</head>
+
+<body>
+
+  <h1>Basic calculator</h1>
+  <div class="calculator">
+    <div class="calculator--screen">
+      <input type="text" class="calculator--input" disabled>
+    </div>
+    <div class="calculator--special">
+      <button class="calculator--button" id="del-all">Clear</button>
+      <button class="calculator--button" id="del">Del</button>
+    </div>
+    <div class="buttons-container">
+      <div class="calculator--buttons">
+        <button class="calculator--number calculator--button">7</button>
+        <button class="calculator--number calculator--button">8</button>
+        <button class="calculator--number calculator--button">9</button>
+        <button class="calculator--number calculator--button">4</button>
+        <button class="calculator--number calculator--button">5</button>
+        <button class="calculator--number calculator--button">6</button>
+        <button class="calculator--number calculator--button">1</button>
+        <button class="calculator--number calculator--button">2</button>
+        <button class="calculator--number calculator--button">3</button>
+        <button class="calculator--number calculator--button">0</button>
+        <button class="calculator--operation" id="equal">=</button>
+      </div>
+      <div class="calculator--operations">
+        <button class="calculator--operation" id="divider">/</button>
+        <button class="calculator--operation" id="multi">x</button>
+        <button class="calculator--operation" id="add">+</button>
+        <button class="calculator--operation" id="subtract">-</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="author">
+    <a href="http://xfirepc.com" target="_blank">Developed by @XfirePc</a>
+  </div>
+
+  <script src="./src/js/domElements.js"></script>
+  <script src="./src/js/index.js" type="module"></script>
+</body>
+
+</html>

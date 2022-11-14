@@ -1,0 +1,141 @@
+:root{
+  --bg-color: #121f3d;
+  --text-color: white;
+  --border-color: #40587c;
+  --button-text-color: rgb(131, 217, 136);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 30px Im !important;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background: #136a8a;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+h1 {
+  font-size: 2.4em;
+  color: rgb(0 0 0 / 67%);
+}
+.calculator{
+  width: max-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.563);
+}
+
+.calculator--screen{
+  width: 100%;
+  height: 70px;
+  border: 1px solid #21b6d3; 
+  border-radius: 10px;
+}
+
+.calculator--input{
+  border: 0;
+  height: 100%;
+  width: 100%;
+  color: #21b6d3;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-align: right;
+  padding: 10px;
+}
+
+.calculator--input:disabled{
+  background: transparent;
+}
+
+.calculator--buttons{
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  grid-template-rows: repeat(4, 70px);
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.calculator--button, .calculator--operation{
+  border: none;  
+  border-radius: 10px;
+  width: 100%;
+  background: transparent;
+  color: var(--text-color);
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.392);
+}
+
+.calculator--operations{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 4px 0px 10px 5px;
+  gap: 4px;
+}
+
+.calculator--operation{
+  color: var(--button-text-color);
+  width: 70px;
+  border: 1px solid #21b6d3;
+  font-weight: bold;
+}
+
+.calculator--special {
+  display: flex;
+  gap: 4px;
+  margin-top: 30px;
+}
+
+button{
+  transition: all .3s;
+  font-size: 20px;
+}
+
+button:hover{
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#equal {
+  width: calc(200% + 4px);
+}
+
+.buttons-container {
+  display: flex;
+}
+
+.author {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-style: italic;
+  font-size: 13px;
+  opacity: 0.4;
+}
+
+.author:hover{
+  opacity: 1;
+}
+.author a {
+  color: #fff;
+  text-decoration: none;
+}
