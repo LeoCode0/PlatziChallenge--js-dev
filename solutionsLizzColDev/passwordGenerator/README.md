@@ -6,3 +6,6 @@ Aquí realicé algunos cambios en el estilo propuesto por el profesor, se aplic�
 En el JS, se incluyeron mensajes de alerta para cuando no se selecciona ninguna opción, así como si se seleccionan todas a la vez. 
 
 Allí podrá generar contraseñas seguras, de letras, números y/o símbolos, así como de palabras aleatorias. 
+
+Aquí podrás ingresar:
+https://lizzcoldev.github.io/PlatziChallenge--js-dev//solutionsLizzColDev/passwordGenerator/index.html
